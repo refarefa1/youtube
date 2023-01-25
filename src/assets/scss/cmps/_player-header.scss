@@ -1,0 +1,20 @@
+.player-header-container {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    position: sticky;
+    top: 0px;
+    background-color: $dark-bg-clr;
+    z-index: 50;
+
+    @include for-narrow-layout {
+        justify-content: flex-start;
+    }
+
+    @include for-mobile-layout {
+    }
+
+    @include for-narrow-mobile-layout {}
+}

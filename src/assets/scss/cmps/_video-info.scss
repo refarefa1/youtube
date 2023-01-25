@@ -1,0 +1,114 @@
+.player-video-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 24px;
+
+    .player-video-title {
+        padding-inline-end: 32px;
+
+        h1 {
+            font-size: rem(22px);
+            line-height: 32px;
+        }
+    }
+
+    .player-video-info-details {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 12px;
+
+        .player-channel-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 2em;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+
+                small {
+                    color: $light-gray-clr;
+                }
+            }
+        }
+
+        .actions {
+
+            display: flex;
+            gap: 12px;
+
+            .share-btn,
+            .like-btn {
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                justify-content: center;
+                background-color: $brdr-clr;
+                border-radius: 2em;
+                height: 46px;
+                width: 105px;
+                padding-left: 3px;
+
+                h1 {
+                    font-size: rem(16px);
+                    font-family: roboto-light;
+                }
+
+                svg {
+                    fill: $light-txt-clr;
+                }
+
+                &:hover {
+                    background-color: lighten($brdr-clr, 8%);
+                }
+            }
+
+            .options-btn {
+                width: 46px;
+                height: 46px;
+                background-color: $brdr-clr;
+                border-radius: 2em;
+
+                svg {
+                    fill: $light-txt-clr;
+                }
+
+                &:hover {
+                    background-color: lighten($brdr-clr, 8%);
+                }
+            }
+        }
+    }
+
+
+    @include for-mobile-layout {
+        padding-inline: 18px;
+
+        .player-video-title {
+            h1 {
+                font-size: rem(18px);
+                line-height: 1.2;
+            }
+        }
+
+        .player-video-info-details {
+            flex-direction: column;
+            gap: 18px;
+
+            .actions {
+                justify-content: space-between;
+                .options-btn {
+                    display: none;
+                }
+            }
+        }
+    }
+}

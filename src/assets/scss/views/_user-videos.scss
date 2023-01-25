@@ -1,0 +1,105 @@
+.user-videos-container {
+
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: 95px 1fr;
+    grid-template-areas:
+        'header header'
+        'nav list'
+    ;
+    height: 100%;
+
+    .player-list {
+        display: flex;
+        flex-direction: column;
+
+        .player-preview {
+            a {
+                display: flex;
+                flex-direction: row;
+                gap: 16px;
+
+                .preview-img {
+                    width: 30%;
+                }
+
+                .preview-details {
+                    padding-top: 0;
+
+                    .channel-img {
+                        display: none;
+                    }
+
+                    .preview-txt {
+
+                        .preview-title {
+                            margin-bottom: 12px;
+                        }
+
+                        .preview-channel-title {
+                            display: inline;
+                        }
+
+                        .preview-published {
+                            display: inline;
+                            padding-inline-start: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.collapsed {
+        grid-template-columns: 86px 1fr;
+    }
+
+
+
+    @include for-wide-layout {
+        grid-template-columns: 86px 1fr;
+    }
+
+    @include for-narrow-layout {
+        grid-template-columns: 1fr;
+
+        .player-list {
+            .player-preview {
+                a {
+                    .preview-details {
+                        .preview-txt {
+                            .preview-title {
+                                margin-bottom: 0px;
+                            }
+
+                            .preview-channel-title {
+                                display: block;
+
+                                &::after {
+                                    display: none;
+                                }
+                            }
+
+                            .preview-published{
+                                padding: 0;
+                            }
+
+
+                        }
+                    }
+                }
+            }
+        }
+
+        &.collapsed {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @include for-narrow-mobile-layout {
+        grid-template-rows: 64px 1fr;
+
+    }
+
+
+}

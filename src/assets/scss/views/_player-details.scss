@@ -1,0 +1,50 @@
+.player-details-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
+    .player-details {
+        display: flex;
+        margin: auto;
+        height: 100%;
+        gap: 48px;
+        width: 90%;
+
+        .player-info {
+            width: 100%;
+
+            .player-video {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                iframe {
+                    aspect-ratio: 16 / 9;
+                    width: 100%;
+                    border: none;
+                }
+            }
+
+        }
+    }
+
+    @include for-normal-layout {
+        .player-details {
+            flex-direction: column;
+            width: 100%;
+            padding-inline: 18px;
+        }
+    }
+
+    @include for-mobile-layout {
+        .player-details {
+            padding-inline: 0px;
+
+            .player-info{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

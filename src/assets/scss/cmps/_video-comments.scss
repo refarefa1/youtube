@@ -1,0 +1,128 @@
+.comments-container {
+    margin-top: 32px;
+
+    .comment-count {
+
+        h1 {
+            font-size: rem(18px);
+            letter-spacing: .6px;
+            font-family: roboto-light;
+        }
+
+        svg {
+            display: none;
+        }
+    }
+
+    .comment-list {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 38px;
+
+        .comment-preview {
+            display: flex;
+            gap: 18px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 2em;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h2 {
+                    font-size: rem(16px);
+                    font-family: roboto-regular;
+
+                    span {
+                        font-family: roboto-thin;
+                        font-size: rem(14px);
+                        color: $light-gray-clr;
+                        padding-inline-start: 10px;
+                    }
+                }
+
+                p {
+                    font-size: rem(18px);
+                    line-height: 22px;
+
+                }
+
+
+            }
+
+        }
+    }
+
+    @include for-mobile-layout {
+
+        .comment-count {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            border-top: 1px solid $brdr-clr;
+            border-bottom: 1px solid $brdr-clr;
+            padding-inline: 18px;
+
+            svg {
+                display: block;
+                fill: $light-txt-clr;
+            }
+
+            h1 {
+                font-size: rem(14px);
+                letter-spacing: 0;
+
+            }
+        }
+
+        .comment-list {
+            padding-inline: 18px;
+            display: none;
+        }
+
+        &.expand {
+
+            .comment-list {
+                display: flex;
+
+                .comment-preview {
+                    div {
+                        width: 100%;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: pre-wrap;
+                        gap: 2px;
+
+                        h2 {
+                            font-size: rem(14px);
+                            span {
+                                font-size: rem(12px);
+                                padding-block-start: 6px;
+                                display: block;
+                                padding-inline: 0;
+                            }
+                        }
+
+                        p {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: pre-wrap;
+                            font-size: rem(16px);
+                            line-height: 1.2;
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+    }
+}

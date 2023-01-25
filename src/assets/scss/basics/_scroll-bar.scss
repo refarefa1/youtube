@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: $light-gray-clr;
+}
+
+@include for-mobile-layout {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}

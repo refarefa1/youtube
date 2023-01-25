@@ -1,0 +1,132 @@
+.related-video-list {
+    height: 100%;
+
+    .player-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 0;
+
+        .player-preview {
+            a {
+                display: flex;
+                gap: 16px;
+                flex-direction: row;
+
+                .preview-img {
+                    width: 210px;
+                }
+
+                .preview-details {
+                    display: flex;
+                    padding: 0;
+
+                    img {
+                        display: none;
+                    }
+
+                    .preview-txt {
+                        width: 250px;
+
+                        .preview-channel-title {
+                            padding-top: 6px;
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+
+    @include for-normal-layout {
+        display: none;
+    }
+}
+
+.related-video-list-mobile {
+    display: none;
+
+    @include for-normal-layout {
+        display: flex;
+        margin-top: 32px;
+
+        .player-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 0;
+
+            .player-preview {
+                a {
+                    display: flex;
+                    gap: 16px;
+                    flex-direction: row;
+
+                    .preview-img {
+                        width: 210px;
+                    }
+
+                    .preview-details {
+                        display: flex;
+                        padding: 0;
+
+                        img {
+                            display: none;
+                        }
+
+                        .preview-txt {
+                            width: unset;
+
+                            .preview-channel-title {
+                                padding-top: 6px;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    @include for-mobile-layout {
+        padding-inline: 18px;
+        order: 1;
+
+        .player-list {
+            .player-preview {
+                a {
+                    .preview-img {
+                        width: 40%;
+                    }
+
+                    .preview-details {
+                        .preview-txt {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 4px;
+
+                            .preview-title {
+                                line-height: 1.2;
+                            }
+
+                            .preview-channel-title {
+                                padding: 0;
+
+                                &::after{
+                                    display: none;
+                                }
+                            }
+
+                            .preview-published {
+                                display: block;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

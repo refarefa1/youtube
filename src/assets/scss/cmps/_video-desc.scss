@@ -1,0 +1,64 @@
+.description {
+    margin-top: 20px;
+    background-color: $brdr-clr;
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+
+
+    .desc-info {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 8px;
+
+        .desc-views {
+            font-size: rem(18px);
+            font-family: roboto-bold;
+        }
+
+        .desc-created {
+            font-size: rem(18px);
+            font-family: roboto-bold;
+        }
+    }
+
+    .desc {
+        h3 {
+            font-size: rem(16px);
+            letter-spacing: .3px;
+            font-family: roboto-light;
+            line-height: 24px;
+            white-space: pre-wrap;
+
+            &.short {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            p {
+                font-family: roboto-regular;
+                padding-top: 12px;
+            }
+
+        }
+
+        .show-more {
+            font-family: roboto-bold;
+            padding-top: 12px;
+        }
+    }
+
+    @include for-mobile-layout {
+        .desc {
+            h3 {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: pre-wrap;
+                line-height: 1.2;
+            }
+        }
+    }
+}

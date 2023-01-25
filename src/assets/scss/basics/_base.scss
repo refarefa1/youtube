@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: $clr1;
+    color: $clr6;
+}
+
+#root {
+    height: 100%;
+}
+
+html {
+    color: $clr2;
+}
+
+body {
+    font-size: rem(16px);
+    margin: 0;
+    background-color: $dark-bg-clr;
+    color: $light-txt-clr;
+    min-height: 100vh;
+    line-height: 1;
+    font-family: roboto-regular;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    line-height: 1;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+input {
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: $light-txt-clr;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,94 @@
+.player-preview {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    .preview-img {
+        border-radius: 1em;
+        background-color: black;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .preview-details {
+        display: flex;
+        gap: 14px;
+        padding-top: 18px;
+
+        .channel-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 2em;
+
+        }
+
+        .preview-title {
+            font-size: rem(17px);
+            line-height: 1.5;
+            letter-spacing: .8px;
+            font-family: roboto-light;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+
+        .preview-channel-title {
+            padding-top: 12px;
+            font-size: rem(15px);
+            color: $light-gray-clr;
+            line-height: 1;
+        }
+
+        .preview-published {
+            padding-top: 6px;
+            font-size: rem(15px);
+            color: $light-gray-clr;
+        }
+    }
+
+    @include for-mobile-layout {
+        .preview-img {
+            border-radius: 0;
+        }
+
+        .preview-details {
+            padding-inline: 6px;
+
+            .channel-img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .preview-title {
+                font-size: rem(12px);
+            }
+
+            .preview-channel-title {
+                display: inline;
+                font-size: rem(12px);
+                padding-top: 6px;
+
+                &::after {
+                    content: " ●";
+                    font-size: rem(8px);
+                    position: relative;
+                    bottom: 2px;
+                    left: 2px;
+                }
+            }
+
+            .preview-published {
+                display: inline;
+                font-size: rem(12px);
+                padding-left: 6px;
+                position: relative;
+                left: -1px;
+            }
+        }
+    }
+
+    @include for-narrow-mobile-layout {}
+
+}

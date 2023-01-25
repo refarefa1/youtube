@@ -1,0 +1,34 @@
+.video-index-container {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    grid-template-rows: 95px 1fr;
+    grid-template-areas:
+        'header header'
+        'nav list'
+    ;
+    height: 100%;
+
+    &.collapsed {
+        grid-template-columns: 86px 1fr;
+    }
+
+
+
+    @include for-wide-layout {
+        grid-template-columns: 86px 1fr;
+    }
+
+    @include for-narrow-layout {
+        grid-template-columns: 1fr;
+
+        &.collapsed {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @include for-narrow-mobile-layout {
+        grid-template-rows: 64px 1fr;
+
+    }
+
+}
