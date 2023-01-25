@@ -39,7 +39,7 @@ export const VideoInfo = ({ video, user, onSaveUserPrefs }) => {
                 </div>
                 <div className="actions">
                     <button onClick={likeVideo} className="like-btn">
-                        {user.likedVideos.includes(video._id)
+                        {user?.likedVideos?.includes(video._id)
                             ? <FillLikeSvg />
                             : <SmallLikeSvg />
                         }
